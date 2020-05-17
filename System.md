@@ -23,5 +23,5 @@ sudo rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia-cuda
 
 ### NVENC/NVDEC (optional)
 ```bash
-sudo dnf install xorg-x11-drv-nvidia-cuda-libs
+sudo rpm-ostree install xorg-x11-drv-nvidia-cuda-libs
 ```
