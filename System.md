@@ -9,19 +9,24 @@ sudo rpm-ostree install https://download1.rpmfusion.org/free/fedora/rpmfusion-fr
 ## NVIDIA
 Package installations (RPM Layers) should be done with rpm-ostree`.
 ```bash
-sudo rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia
+rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia
 ```
 after installation we are going to blacklist nouveau and enable modeset to nvidia:
 ```bash
-sudo rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1
+rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1
 ```
 
 ### CUDA (optional)
 ```bash
-sudo rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia-cuda
+rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia-cuda
 ```
 
 ### NVENC/NVDEC (optional)
 ```bash
-sudo rpm-ostree install xorg-x11-drv-nvidia-cuda-libs
+rpm-ostree install xorg-x11-drv-nvidia-cuda-libs
+```
+
+### Vulkan
+```bash
+rpm-ostree install vulkan-loader.i686 libvulkan.so.1 libGL.so.1 vulkan-tools
 ```
